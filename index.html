@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISA2 Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        label { display: block; margin-bottom: 5px; }
+        input { margin-bottom: 15px; padding: 8px; width: 100%; }
+        button { padding: 10px 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        #results { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>ISA2 Calculator</h1>
+    <form id="calculator-form">
+        <label for="student-name">Student Name:</label>
+        <input type="text" id="student-name" name="student-name" required>
+
+        <label for="metric-input">Metric Input:</label>
+        <input type="number" id="metric-input" name="metric-input" required>
+
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="results"></div>
+    <script>
+        document.getElementById('calculator-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('student-name').value;
+            const metricValue = document.getElementById('metric-input').value;
+            // Here you would perform your calculations based on the metric input
+            const result = `Calculation result for ${name} with input ${metricValue}`;
+            document.getElementById('results').innerText = result;
+        });
+    </script>
+</body>
+</html>
